@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Bot, GitBranch, Menu, X ,CircleUserRound } from "lucide-react";
+import { Bot, GitBranch, Menu, X, CircleUserRound } from "lucide-react";
 
 const Navbar = ({ onMenuClick }) => {
   const [isOpen, setIsOpen] = useState(false);
-
-  
 
   return (
     <nav className="fixed top-0 left-0 w-full h-[84px]   bg-[#F1F5F9] text-black z-50">
@@ -23,18 +21,20 @@ const Navbar = ({ onMenuClick }) => {
               haki<span className="text-blue-500">.</span>
             </Link>
 
-            <Link
-              to="/chatbot"
+            <a
+              href="https://chatgpt.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-2 text-black hover:text-[#4B5563] transition"
             >
+              
+
               <Bot size={21} />
               <div>
                 <p className="text-sm text-black font-semibold">AI Chatbot</p>
-                <p className="text-[10px] text-black">
-                  Your smart assistant
-                </p>
+                <p className="text-[10px] text-black">Your smart assistant</p>
               </div>
-            </Link>
+            </a>
           </div>
 
           {/* Right Section */}
@@ -66,7 +66,7 @@ const Navbar = ({ onMenuClick }) => {
             className="md:hidden p-2 rounded-lg hover:bg-gray-800"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <CircleUserRound  size={32} />}
+            {isOpen ? <X size={24} /> : <CircleUserRound size={32} />}
           </button>
         </div>
 
